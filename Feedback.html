@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/Main.css">
+    <title>Document</title>
+
+</head>
+<center>
+<body style="text-align:center;">
+    
+    
+    <!-- header -->
+    <header>            
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Feedback.html">Feedback</a></li>
+            <li><a href="Review.html">Reviews</a></li>
+            <li style="float:right"><a class="active" href="Home.html">_kentography</a></li>
+          </ul>
+    </header>
+    
+    <div style="background-color: whitesmoke; padding: 10px,150px;">
+
+    
+    <h2>Feedback</h2>
+
+    <div>
+        <p>It would be much appreciated to get your feedback my work as well as tips to imporve myelf as well as my web site</p>
+        <p>Thank you</p>
+    </div>
+
+    <br><br>
+
+    <!--Feedback div-->
+
+
+    <div style="border-style: solid; border-radius: 5px; border-color: #111; margin: 5px,100px;">
+        <form action="">
+
+        <table style="padding: 35px;">
+            <tr>
+                <td>Name</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+                <td>Birthday</td>
+                <td><input type="date"></td>
+            </tr>
+            <tr>
+                <td>Feedback about Web Page</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Feedback for Photography</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Do like any Picture</td>
+                <td><input type="radio" name="Yes" id="" > Yes  
+                    <input type="radio" name="No" id=""> No</td>
+            </tr>
+            <tr>
+                <td>Would you like a response mail to your feedback</td>
+                <td><input type="checkbox" name="" id="">Yes</td>
+            </tr>
+            <tr>
+                <td>Whats the range u would rate the picture at</td>
+                <td><input type="range" name="picrange" id=""></td>
+                
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+
+
+            <label for="geoLocation">Where are you located</label>
+            <input type="button" value="Location" onclick="getloc()">
+            <div id="loc"> </div>
+        
+        </form>
+
+        <div>
+            <h3>Sign Here</h3>
+            <canvas id="myCanvas" width="200" height="40" style="border:1px solid #000000;">
+            </canvas>
+        </div>
+        <br><br>
+
+    </div>
+
+
+</div>
+    
+
+<footer>
+    <div style="padding:25px; background-color: whitesmoke;">
+        <h4 style="font-size: 20px;"><i> Check out my work at </i> </h4>
+        
+        <a href="https://www.instagram.com/X">@_kentography</a>
+        <br>
+    </div>
+    
+</footer>
+
+
+
+
+<!-- Script -->
+<script>
+    var x = document.getElementById("loc");
+    function getloc() {
+      if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude;
+    }
+    </script>
+
+</body>
+</center>
+</html>
